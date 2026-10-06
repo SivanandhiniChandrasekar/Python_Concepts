@@ -1,0 +1,12 @@
+1. B. TypeError: unhashable type: 'list'
+2. B. {1: 'C'}
+3. C.
+    20
+    KeyError
+4. C. RuntimeError
+5. A. 10 30 {'b': 20}
+6. C. {'a': 10, 'b': 20}
+7. B. {(1, 2), (3, 4)}
+8. B. {1: 1, 2: 4, 3: 9}
+9. C. {'a': [10, 20]}
+10. A.{1, 2} {5, 6}

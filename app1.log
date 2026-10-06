@@ -1,0 +1,8 @@
+INFO: User login successful
+ERROR: Database connection failed
+INFO: User logout successful
+WARNING: Disk space is low
+ERROR: File not found
+INFO: User login successful
+ERROR: Database connection failed due to network issues
+ERROR: File not found in the requested path

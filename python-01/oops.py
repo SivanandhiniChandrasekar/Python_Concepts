@@ -2,7 +2,7 @@
 # Class, object, abstraction, encapsulation, polymorphism, inheritance.
 # Class - Its a blueprint to create object.
 # object - It is an instance of the class.
-# Difference between Object oriented programming and Strucutred language.
+# Difference between Object oriented programming and Strucutred language(Procedural Language).
 
 # Calculator - 
 # sum - 2 parmeter, 3 parameter, arr

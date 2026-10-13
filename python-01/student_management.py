@@ -10,12 +10,25 @@
 class Student():
     total_no_of_students = 0
     def __init__(self, name, roll_number, dob,marks):
-        self.name = name
-        self.roll_number = roll_number
-        self.dob = dob 
+        self.name = name #Public access modifier
+        self._roll_number = roll_number #Protected access modifier
+        self.__dob = dob #Private access modifier
         self.marks = marks
         
         Student.total_no_of_students += 1
+        
+    # Getters
+    def get_marks(self):
+        return self.marks 
+    
+    @property
+    def names(self):
+        return self.name 
+    
+    @names.setter
+    def names(self, updated_name):
+        self.name = updated_name
+        return "Updated successfully"
     
     def average_mark(self):
         if not self.marks:
@@ -46,15 +59,17 @@ class Student():
                 flag = 0
                 return "Fail"
         if flag:
-            return "True"
+            return "Pass"
         
-    def mark_update(self, subject, updated_mark):
+    # Setters
+    def set_mark(self, subject, updated_mark):
         if subject not in self.marks:
             return "Subject not registered to this student"
         if not 0<= updated_mark <=100:
             return "Enter valid marks"
         self.marks[subject] = updated_mark
-        
+        return "Marks updated Successfully!"
+    
     def display_details(self):
         d = {
                 "Name": self.name,
@@ -67,7 +82,14 @@ class Student():
         return d 
 # name, roll_number, dob,marks
 s1 = Student("Aswini","es32it01",'25-09-2004',{'Tamil': 80, 'English':78,'Maths':89})
-s1.mark_update("English",88)
-details = s1.display_details()
-for i in details:
-    print(i, details[i])
+print(s1.name)
+print(s1._roll_number)
+# print(s1.__dob)
+# print(s1.get_dob())
+# s1.mark_update("English",88)
+# details = s1.display_details()
+# for i in details:
+#     print(i, details[i])
+print(s1.names)
+s1.names = "Praveena"
+print(s1.names)

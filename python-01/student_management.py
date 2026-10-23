@@ -11,7 +11,7 @@ class Student():
     total_no_of_students = 0
     def __init__(self, name, roll_number, dob,marks):
         self.name = name #Public access modifier
-        self._roll_number = roll_number #Protected access modifier
+        self.roll_number = roll_number #Protected access modifier
         self.__dob = dob #Private access modifier
         self.marks = marks
         
@@ -80,16 +80,47 @@ class Student():
                 "Result": self.status_checking()
             }
         return d 
+
+class School_Student(Student):
+    def __init__(self, name, roll_number, dob,marks, school_name):
+        super().__init__(name, roll_number, dob,marks)
+        self.school_name = school_name
+    
+    def display_details(self):
+        d = super().display_details() 
+        d["School Name"] = self.school_name
+        return d
+
+    def average_mark(self, internal_marks=0):
+        if not self.marks:
+            return 0 
+        total = sum(self.marks.values())
+        average = round(total / len(self.marks)) 
+        return average + internal_marks
+
+skl_s1 = School_Student("Aswini","es32it01",'25-09-2004',{'Tamil': 80, 'English':78,'Maths':89}, "xyz School")
+print(skl_s1.name)
+skl_s1.names = "Praveena"
+# Student - 
+print(skl_s1.names)
+print(skl_s1.name)
+print(skl_s1.status_checking())
+print(skl_s1.display_details())
+print(skl_s1.average_mark(20))
+
+# MRO - Method Resolution Order - The order in which the methods are resolved in case of multiple inheritance. 
+# Method Lookup
+
 # name, roll_number, dob,marks
-s1 = Student("Aswini","es32it01",'25-09-2004',{'Tamil': 80, 'English':78,'Maths':89})
-print(s1.name)
-print(s1._roll_number)
+# s1 = Student("Aswini","es32it01",'25-09-2004',{'Tamil': 80, 'English':78,'Maths':89})
+# print(s1.name
+# print(s1._roll_number)
 # print(s1.__dob)
 # print(s1.get_dob())
 # s1.mark_update("English",88)
 # details = s1.display_details()
 # for i in details:
 #     print(i, details[i])
-print(s1.names)
-s1.names = "Praveena"
-print(s1.names)
+# print(s1.names)
+# s1.names = "Praveena"
+# print(s1.names)
